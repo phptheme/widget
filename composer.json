@@ -1,0 +1,12 @@
+{
+    "name": "phptheme/widget",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpTheme\\Widget\\" : ""
+        }
+    },
+    "require": {
+        "phptheme/view": "*"
+    }
+}
