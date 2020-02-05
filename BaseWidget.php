@@ -8,6 +8,7 @@ namespace PhpTheme\Widget;
 
 use ReflectionClass;
 use PhpTheme\View\RenderFileTrait;
+use PhpTheme\Tag\Tag;
 
 abstract class BaseWidget extends Tag
 {

@@ -6,6 +6,6 @@
  */
 namespace PhpTheme\Widget;
 
-abstract class Widget extends BaseWidget
+class Widget extends BaseWidget
 {
 }
