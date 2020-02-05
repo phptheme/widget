@@ -6,6 +6,36 @@
  */
 namespace PhpTheme\Widget;
 
-class Widget extends BaseWidget
+use ReflectionClass;
+use PhpTheme\View\RenderFileTrait;
+use PhpTheme\Tag\Tag;
+
+class Widget extends Tag implements WidgetInterface
 {
+
+    use RenderFileTrait;
+
+    const VIEWS_DIR = 'Views';
+
+    protected $_viewPath;
+
+    public function getViewPath() : string
+    {
+        if (!$this->_viewPath)
+        {
+            $reflection = new ReflectionClass($this);
+
+            $this->_viewPath = dirname($reflection->getFileName());
+
+            $this->_viewPath .= static::VIEWS_DIR ? (DIRECTORY_SEPARATOR . static::VIEWS_DIR) : '';
+        }
+    
+        return $this->_viewPath;
+    }
+
+    public function render($template, $params = []) : string
+    {
+        return $this->renderFile($this->getViewPath() . DIRECTORY_SEPARATOR . $template . '.php', $params);
+    }
+
 }
