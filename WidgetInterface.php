@@ -6,9 +6,13 @@
  */
 namespace PhpTheme\Widget;
 
-interface WidgetInterface
+interface WidgetInterface extends \PhpTheme\Tag\TagInterface
 {
 
     public function __construct(array $params = []);
+    
+    public function getViewPath() : string;
+    
+    public function render($template, $params = []) : string;
 
 }

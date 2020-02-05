@@ -37,5 +37,5 @@ class Widget extends Tag implements WidgetInterface
     {
         return $this->renderFile($this->getViewPath() . DIRECTORY_SEPARATOR . $template . '.php', $params);
     }
-
+    
 }
