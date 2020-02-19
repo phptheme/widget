@@ -19,6 +19,13 @@ class Widget extends Tag implements WidgetInterface
 
     protected $_viewPath;
 
+    protected $_theme;
+
+    public function getTheme()
+    {
+        return $this->_theme;
+    }
+
     public function getViewPath() : string
     {
         if (!$this->_viewPath)

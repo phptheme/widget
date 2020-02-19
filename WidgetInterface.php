@@ -12,6 +12,8 @@ interface WidgetInterface extends \PhpTheme\Tag\TagInterface
     public function __construct(array $params = []);
     
     public function getViewPath() : string;
+
+    public function getTheme();
     
     public function render($template, $params = []) : string;
 
