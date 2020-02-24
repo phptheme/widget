@@ -26,6 +26,16 @@ class Widget extends Tag implements WidgetInterface
         return $this->_theme;
     }
 
+    public function __get($name)
+    {
+        if ($name == 'theme')
+        {
+            return $this->_theme;
+        }
+
+        return null;
+    }
+
     public function getViewPath() : string
     {
         if (!$this->_viewPath)
